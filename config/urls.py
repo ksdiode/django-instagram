@@ -20,7 +20,7 @@ from config import settings
 from django.views import generic
 
 urlpatterns = [
-  path("", generic.TemplateView.as_view(template_name='index.html')),
+  path("", generic.TemplateView.as_view(template_name='index.html'), name='home'),
   path("admin/", admin.site.urls),
 ]
 

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -8,14 +9,18 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{% static 'style/main.css'%}"/>
     <title>Hello, world!</title>
     {% block style %}{% endblock %}
   </head>
 
   <body>
     {% include 'navbar.html'%}
+
     {% include 'header.html'%}
-    {% block content %}{% endblock %}
+    <div class="container content">
+      {% block content %}{% endblock %}
+    </div>
     {% include 'footer.html'%}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
     {% block script %}{% endblock %}
