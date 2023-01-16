@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="mx-auto" style="width: 600px">
+    <h1>
+      <i class="fas fa-user-gear"></i>
+      사용자 정보 수정</h1>
+
+    <form method="post" class="mt-5">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="username">사용자 ID</label>
+        <div class="form-control border border-0">{{user.user_id}}</div>
+      </div>
+      {% bootstrap_form form %}
+
+      <button type=" submit" class="btn btn-primary">
+        <i class=" fas fa-check"></i>
+        확인
+      </button>
+    </form>
+  </div>
+{% endblock %}

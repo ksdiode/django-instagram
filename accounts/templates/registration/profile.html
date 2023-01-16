@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <h1>
+    <i class="fas fa-user-gear"></i>
+    회원 정보 보기
+  </h1>
+
+  <table class="table mt-5">
+    <tbody>
+      <tr>
+        <th style="width:120px">사용자 ID</th>
+        <td>{{profile.user_id}}</td>
+      </tr>
+      <tr>
+        <th>이름</th>
+        <td>{{profile.name}}</td>
+      </tr>
+      <tr>
+        <th>비밀번호</th>
+        <td>
+          <a href="{% url 'accounts:password_change' %}" class="btn btn-primary">
+            <i class="fa-solid fa-pen-to-square"></i>
+            비밀번호 변경</a>
+        </td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{profile.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="{% url 'accounts:profile_edit' %}" class="btn btn-primary">
+    <i class="fa-solid fa-pen-to-square"></i>
+    수정</a>
+
+{% endblock %}
